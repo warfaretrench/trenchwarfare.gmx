@@ -26,16 +26,149 @@
           <argument>
             <kind>1</kind>
             <string>///algemene variabelen
-global.a_lives       = 100;
-global.a_damage      = 100;
-global.a_speed       = 100;
-global.a_firerate    = 100;
-global.a_radius      = 100;                       
-global.a_placing     = false;
-global.a_soldiercost = 10;
-global.a_select      = false;
+global.a_lives          = 10;
+global.a_damage         = 10;
+global.a_speed          = 10;
+global.a_firerate       = 10;
+global.a_radius         = 200;                       
+global.a_placing        = false;
+global.a_soldiercost    = 10;
+global.a_select         = false;
 target_x = self.x
 target_y = self.y
+
+//landmacht
+    global.a_l_lives        = global.a_lives               
+    global.a_l_damage       = global.a_damage        
+    global.a_l_speed        = global.a_speed         
+    global.a_l_firerate     = global.a_firerate      
+    global.a_l_radius       = global.a_radius                           
+    global.a_l_placing      = global.a_placing       
+    global.a_l_soldiercost  = global.a_soldiercost   
+
+        global.a_l_f_lives      = global.a_l_lives               
+        global.a_l_f_damage     = global.a_l_damage        
+        global.a_l_f_speed      = global.a_l_speed         
+        global.a_l_f_firerate   = global.a_l_firerate      
+        global.a_l_f_radius     = global.a_l_radius                               
+        global.a_l_f_placing    = global.a_l_placing       
+        global.a_l_f_soldiercost= global.a_l_soldiercost
+          
+        global.a_l_s_lives      = global.a_l_lives               
+        global.a_l_s_damage     = global.a_l_damage        
+        global.a_l_s_speed      = global.a_l_speed         
+        global.a_l_s_firerate   = global.a_l_firerate      
+        global.a_l_s_radius     = global.a_l_radius                               
+        global.a_l_s_placing    = global.a_l_placing       
+        global.a_l_s_soldiercost= global.a_l_soldiercost 
+                  
+        global.a_l_o_lives      = global.a_l_lives               
+        global.a_l_o_damage     = global.a_l_damage        
+        global.a_l_o_speed      = global.a_l_speed         
+        global.a_l_o_firerate   = global.a_l_firerate      
+        global.a_l_o_radius     = global.a_l_radius                               
+        global.a_l_o_placing    = global.a_l_placing       
+        global.a_l_o_soldiercost= global.a_l_soldiercost   
+ 
+//marine       
+    global.a_m_lives        = global.a_lives               
+    global.a_m_damage       = global.a_damage        
+    global.a_m_speed        = global.a_speed         
+    global.a_m_firerate     = global.a_firerate      
+    global.a_m_radius       = global.a_radius                               
+    global.a_m_placing      = global.a_placing       
+    global.a_m_soldiercost  = global.a_soldiercost
+       
+        global.a_m_f_lives      = global.a_m_lives               
+        global.a_m_f_damage     = global.a_m_damage        
+        global.a_m_f_speed      = global.a_m_speed         
+        global.a_m_f_firerate   = global.a_m_firerate      
+        global.a_m_f_radius     = global.a_m_radius                               
+        global.a_m_f_placing    = global.a_m_placing       
+        global.a_m_f_soldiercost= global.a_m_soldiercost
+
+        global.a_m_s_lives      = global.a_m_lives               
+        global.a_m_s_damage     = global.a_m_damage        
+        global.a_m_s_speed      = global.a_m_speed         
+        global.a_m_s_firerate   = global.a_m_firerate      
+        global.a_m_s_radius     = global.a_m_radius                               
+        global.a_m_s_placing    = global.a_m_placing       
+        global.a_m_s_soldiercost= global.a_m_soldiercost
+        
+        global.a_m_o_lives      = global.a_m_lives               
+        global.a_m_o_damage     = global.a_m_damage        
+        global.a_m_o_speed      = global.a_m_speed         
+        global.a_m_o_firerate   = global.a_m_firerate      
+        global.a_m_o_radius     = global.a_m_radius                               
+        global.a_m_o_placing    = global.a_m_placing       
+        global.a_m_o_soldiercost= global.a_m_soldiercost
+
+//luchtmacht
+    global.a_v_lives        = global.a_lives               
+    global.a_v_damage       = global.a_damage        
+    global.a_v_speed        = global.a_speed         
+    global.a_v_firerate     = global.a_firerate      
+    global.a_v_radius       = global.a_radius                               
+    global.a_v_placing      = global.a_placing       
+    global.a_v_soldiercost  = global.a_soldiercost   
+
+        global.a_v_f_lives      = global.a_v_lives               
+        global.a_v_f_damage     = global.a_v_damage        
+        global.a_v_f_speed      = global.a_v_speed         
+        global.a_v_f_firerate   = global.a_v_firerate      
+        global.a_v_f_radius     = global.a_v_radius                               
+        global.a_v_f_placing    = global.a_v_placing       
+        global.a_v_f_soldiercost= global.a_v_soldiercost
+
+        global.a_v_s_lives      = global.a_v_lives               
+        global.a_v_s_damage     = global.a_v_damage        
+        global.a_v_s_speed      = global.a_v_speed         
+        global.a_v_s_firerate   = global.a_v_firerate      
+        global.a_v_s_radius     = global.a_v_radius                               
+        global.a_v_s_placing    = global.a_v_placing       
+        global.a_v_s_soldiercost= global.a_v_soldiercost
+
+        global.a_v_o_lives      = global.a_v_lives               
+        global.a_v_o_damage     = global.a_v_damage        
+        global.a_v_o_speed      = global.a_v_speed         
+        global.a_v_o_firerate   = global.a_v_firerate      
+        global.a_v_o_radius     = global.a_v_radius                               
+        global.a_v_o_placing    = global.a_v_placing       
+        global.a_v_o_soldiercost= global.a_v_soldiercost
+        
+//raket
+    global.a_r_lives        = global.a_lives               
+    global.a_r_damage       = global.a_damage        
+    global.a_r_speed        = global.a_speed         
+    global.a_r_firerate     = global.a_firerate      
+    global.a_r_radius       = global.a_radius                               
+    global.a_r_placing      = global.a_placing       
+    global.a_r_soldiercost  = global.a_soldiercost   
+    
+        global.a_r_f_lives      = global.a_r_lives               
+        global.a_r_f_damage     = global.a_r_damage        
+        global.a_r_f_speed      = global.a_r_speed         
+        global.a_r_f_firerate   = global.a_r_firerate      
+        global.a_r_f_radius     = global.a_r_radius                               
+        global.a_r_f_placing    = global.a_r_placing       
+        global.a_r_f_soldiercost= global.a_r_soldiercost
+
+        global.a_r_s_lives      = global.a_r_lives               
+        global.a_r_s_damage     = global.a_r_damage        
+        global.a_r_s_speed      = global.a_r_speed         
+        global.a_r_s_firerate   = global.a_r_firerate      
+        global.a_r_s_radius     = global.a_r_radius                               
+        global.a_r_s_placing    = global.a_r_placing       
+        global.a_r_s_soldiercost= global.a_r_soldiercost
+        
+        global.a_r_o_lives      = global.a_r_lives               
+        global.a_r_o_damage     = global.a_r_damage        
+        global.a_r_o_speed      = global.a_r_speed         
+        global.a_r_o_firerate   = global.a_r_firerate      
+        global.a_r_o_radius     = global.a_r_radius                               
+        global.a_r_o_placing    = global.a_r_placing       
+        global.a_r_o_soldiercost= global.a_r_soldiercost
+
 
 </string>
           </argument>

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_A</parentName>
+  <parentName>obj_A_L_F</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,12 +25,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>lives       = global.a_l_f_lives         * 3       
-damage      = global.a_l_f_damage        * 3
-speed       = global.a_l_f_speed         * 3
-firerate    = global.a_l_f_firerate      * 3
-radius      = global.a_l_f_radius        * 3                       
-soldiercost = global.a_l_f_soldiercost   * 3
+            <string>global.a_l_f_sol_lives          = global.a_l_f_lives
+global.a_l_f_sol_damage         = global.a_l_f_damage
+global.a_l_f_sol_speed          = global.a_l_f_speed
+global.a_l_f_sol_firerate       = global.a_l_f_firerate
+global.a_l_f_sol_radius         = global.a_l_f_radius
+global.a_l_f_sol_soldiercost    = global.a_l_f_soldiercost
+
+lives       = global.a_l_f_sol_lives             
+damage      = global.a_l_f_sol_damage     
+speed       = global.a_l_f_sol_speed         
+firerate    = global.a_l_f_sol_firerate   
+radius      = global.a_l_f_sol_radius                            
+soldiercost = global.a_l_f_sol_soldiercost
+select      = false;
+target_x = self.x
+target_y = self.y
 
 </string>
           </argument>
@@ -56,14 +66,14 @@ soldiercost = global.a_l_f_soldiercost   * 3
             <kind>1</kind>
             <string>///step event
 if(global.a_placing == false){
-    cooldown -= 1;
+    firerate -= 1;
     
-    target = instance_nearest(x,y,obj_du_alg);
+    target = instance_nearest(x,y,obj_B);
     
-    if(distance_to_object(obj_du_alg) &lt; global.a_l_f_sol_radius){
-        if(global.a_l_f_sol_firerate &lt;=0){
-            instance_create(x,y,obj_ammo_own_soldaat);
-            global.a_l_f_sol_firerate = 25;
+    if(distance_to_object(obj_B_L_F) &lt; radius){
+        if(firerate &lt;=0){
+            instance_create(x,y,obj_A_L_F_ammo);
+            firerate = 25;
         }
     }
 }
@@ -71,78 +81,12 @@ if(global.a_placing == true) {
     x = mouse_x;
     y = mouse_y;
 }
-if(global.a_l_f_sol_lives &lt;= 0) {
+if(lives &lt;= 0) {
     instance_destroy();
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (distance_to_point(target_x, target_y) &lt; 2) {
-    global.a_l_f_sol_speed = false;
+if (distance_to_point(target_x, target_y) &lt; 2) {
+    speed = false;
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_ammo_bad_soldaat">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.a_lives -= 20;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_A_L_F_sol">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.a_l_f_sol_speed = 0;
 </string>
           </argument>
         </arguments>
@@ -167,11 +111,11 @@ if(global.a_l_f_sol_lives &lt;= 0) {
             <kind>1</kind>
             <string>///selection
 if (distance_to_point(mouse_x, mouse_y) &lt; 3) &amp;&amp; (select) {
-        obj_eng_alg.select = false;
+        obj_A.select = false;
             
         
-} else if (distance_to_point(mouse_x, mouse_y) &lt; 1) &amp;&amp; (!select) {
-        obj_eng_alg.select = false;
+} else if (distance_to_point(mouse_x, mouse_y) &lt; 3) &amp;&amp; (!select) {
+        obj_A.select = false;
         select = true;
 } 
 </string>
@@ -198,7 +142,7 @@ if (distance_to_point(mouse_x, mouse_y) &lt; 3) &amp;&amp; (select) {
             <kind>1</kind>
             <string>///movement
 if (select) {
-    move_towards_point(mouse_x,mouse_y,4*global.weerstand);
+    move_towards_point(mouse_x,mouse_y,global.a_l_f_sol_speed);
     target_x = mouse_x;
     target_y = mouse_y;
 }
@@ -206,22 +150,6 @@ if (select) {
 </string>
           </argument>
         </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>114</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_reverse_ydir</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="8" enumb="0">
@@ -246,7 +174,7 @@ draw_self();
 
 if(select == true){
     draw_set_alpha(0.3);
-    draw_circle_color(x,y,radius-125,c_yellow,c_yellow,false);
+    draw_circle_color(x,y,radius,c_yellow,c_yellow,false);
     draw_set_alpha(1);
 }
 
@@ -268,5 +196,8 @@ if(select == true){
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>16,14</point>
+    <point>16,16</point>
+  </PhysicsShapePoints>
 </object>
