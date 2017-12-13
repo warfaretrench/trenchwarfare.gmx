@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_eng_alg</parentName>
+  <parentName>obj_A</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,22 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///variabelen
-gezondheid = 90;
-snelheid = 100;
-target_x = self.x
-target_y = self.y
-radius = 150;                       
-cooldown = 25;
-placing = false;
-soldiercost = 10;
-select = false;
-/*if (global.kant = 1) {
-    sprite_assign(0,spr_us_soldaat);
-}
-if (global.kant = 0) {
-    sprite_assign(0,spr_eng_soldaat);
-}
+            <string>lives       = global.a_l_f_lives         * 3       
+damage      = global.a_l_f_damage        * 3
+speed       = global.a_l_f_speed         * 3
+firerate    = global.a_l_f_firerate      * 3
+radius      = global.a_l_f_radius        * 3                       
+soldiercost = global.a_l_f_soldiercost   * 3
+
 </string>
           </argument>
         </arguments>
@@ -64,23 +55,23 @@ if (global.kant = 0) {
           <argument>
             <kind>1</kind>
             <string>///step event
-if(placing == false){
+if(global.a_placing == false){
     cooldown -= 1;
     
     target = instance_nearest(x,y,obj_du_alg);
     
-    if(distance_to_object(obj_du_alg) &lt; radius){
-        if(cooldown &lt;=0){
+    if(distance_to_object(obj_du_alg) &lt; global.a_l_f_sol_radius){
+        if(global.a_l_f_sol_firerate &lt;=0){
             instance_create(x,y,obj_ammo_own_soldaat);
-            cooldown = 25;
+            global.a_l_f_sol_firerate = 25;
         }
     }
 }
-if(placing == true) {
+if(global.a_placing == true) {
     x = mouse_x;
     y = mouse_y;
 }
-if(gezondheid &lt;= 0) {
+if(global.a_l_f_sol_lives &lt;= 0) {
     instance_destroy();
 }
 </string>
@@ -104,7 +95,7 @@ if(gezondheid &lt;= 0) {
           <argument>
             <kind>1</kind>
             <string>if (distance_to_point(target_x, target_y) &lt; 2) {
-    speed = false;
+    global.a_l_f_sol_speed = false;
 }
 </string>
           </argument>
@@ -128,13 +119,13 @@ if(gezondheid &lt;= 0) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>gezondheid -= 20;
+            <string>global.a_lives -= 20;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_eng_soldaat">
+    <event eventtype="4" ename="obj_A_L_F_sol">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -151,7 +142,7 @@ if(gezondheid &lt;= 0) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed = 0;
+            <string>global.a_l_f_sol_speed = 0;
 </string>
           </argument>
         </arguments>

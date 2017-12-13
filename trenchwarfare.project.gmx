@@ -40,10 +40,14 @@
   </paths>
   <objects name="objects">
     <objects name="ENG">
-      <object>objects\obj_eng_soldaat</object>
       <object>objects\obj_eng_art</object>
       <object>objects\obj_eng_sniper</object>
-      <object>objects\obj_eng_alg</object>
+      <object>objects\obj_A</object>
+      <objects name="Land">
+        <object>objects\obj_A_L_F</object>
+        <object>objects\obj_A_L</object>
+        <object>objects\obj_A_L_F_sol</object>
+      </objects>
     </objects>
     <objects name="Control">
       <object>objects\obj_control1</object>
