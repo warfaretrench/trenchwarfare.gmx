@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///control
-spawnsoldier = instance_nearest(x,y,obj_du_alg);
-if(instance_exists(obj_eng_alg)) {
+spawnsoldier = instance_nearest(x,y,obj_B_L_F);
+if(instance_exists(obj_A)) {
 move_towards_point(spawnsoldier.target.x,spawnsoldier.target.y,30)
 image_angle = direction;
 }
@@ -58,6 +58,27 @@ image_angle = direction;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>other</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>lives -= 10;
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
   </events>
   <PhysicsObject>0</PhysicsObject>
@@ -71,5 +92,8 @@ image_angle = direction;
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>17,14</point>
+    <point>16,16</point>
+  </PhysicsShapePoints>
 </object>

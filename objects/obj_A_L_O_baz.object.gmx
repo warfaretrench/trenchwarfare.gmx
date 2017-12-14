@@ -25,12 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.a_l_0_baz_lives          = global.a_l_0_lives
-global.a_l_0_baz_damage         = global.a_l_0_damage
-global.a_l_0_baz_speed          = global.a_l_0_speed
-global.a_l_0_baz_firerate       = global.a_l_0_firerate
-global.a_l_0_baz_radius         = global.a_l_0_radius
-global.a_l_0_baz_soldiercost    = global.a_l_0_soldiercost
+            <string>
+global.a_l_0_baz_lives          = global.a_l_0_lives * global.a_l_o_lives_u
+global.a_l_0_baz_damage         = global.a_l_0_damage * global.a_l_o_damage_u
+global.a_l_0_baz_speed          = global.a_l_0_speed * global.a_l_o_speed_u
+global.a_l_0_baz_firerate       = global.a_l_0_firerate * global.a_l_o_firerate_u
+global.a_l_0_baz_radius         = global.a_l_0_radius * global.a_l_o_radius_u
+global.a_l_0_baz_soldiercost    = global.a_l_0_soldiercost * global.a_l_o_soldiercost_u
 
 lives       = global.a_l_0_baz_lives             
 damage      = global.a_l_0_baz_damage     
@@ -69,7 +70,7 @@ if(global.a_placing == false){
     
     target = instance_nearest(x,y,obj_B);
     
-    if(distance_to_object(obj_B_L_S) &lt; radius){
+    if(distance_to_object(target) &lt; radius){
         if(firerate &lt;=0){
             instance_create(x,y,obj_A_L_O_ammo);
             firerate = 25;

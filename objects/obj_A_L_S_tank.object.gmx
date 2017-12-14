@@ -25,12 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.a_l_s_tank_lives          = global.a_l_s_lives
-global.a_l_s_tank_damage         = global.a_l_s_damage
-global.a_l_s_tank_speed          = global.a_l_s_speed
-global.a_l_s_tank_firerate       = global.a_l_s_firerate
-global.a_l_s_tank_radius         = global.a_l_s_radius
-global.a_l_s_tank_soldiercost    = global.a_l_s_soldiercost
+            <string>global.a_l_s_tank_lives          = global.a_l_s_lives * global.a_l_s_lives_u
+global.a_l_s_tank_damage         = global.a_l_s_damage * global.a_l_s_damage_u
+global.a_l_s_tank_speed          = global.a_l_s_speed * global.a_l_s_speed_u
+global.a_l_s_tank_firerate       = global.a_l_s_firerate * global.a_l_s_firerate_u
+global.a_l_s_tank_radius         = global.a_l_s_radius * global.a_l_s_radius_u
+global.a_l_s_tank_soldiercost    = global.a_l_s_soldiercost * global.a_l_s_soldiercost
 
 lives       = global.a_l_s_tank_lives             
 damage      = global.a_l_s_tank_damage     
@@ -91,7 +91,36 @@ if (distance_to_point(target_x, target_y) &lt; 2) {
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="54">
+    <event eventtype="6" enumb="53">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///movement
+if (select) {
+    move_towards_point(mouse_x,mouse_y,global.a_l_s_tank_speed);
+    target_x = mouse_x;
+    target_y = mouse_y;
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="51">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -117,35 +146,6 @@ if (distance_to_point(mouse_x, mouse_y) &lt; 3) &amp;&amp; (select) {
         obj_A.select = false;
         select = true;
 } 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="53">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///movement
-if (select) {
-    move_towards_point(mouse_x,mouse_y,global.a_l_s_tank_speed);
-    target_x = mouse_x;
-    target_y = mouse_y;
-}
-
 </string>
           </argument>
         </arguments>
