@@ -33,9 +33,9 @@ global.a_l_0_baz_firerate       = global.a_l_0_firerate * global.a_l_o_firerate_
 global.a_l_0_baz_radius         = global.a_l_0_radius * global.a_l_o_radius_u
 global.a_l_0_baz_soldiercost    = global.a_l_0_soldiercost * global.a_l_o_soldiercost_u
 
-lives       = global.a_l_0_baz_lives             
+levens      = global.a_l_0_baz_lives             
 damage      = global.a_l_0_baz_damage     
-speed       = global.a_l_o_baz_speed         
+snelheid    = global.a_l_o_baz_speed         
 firerate    = global.a_l_o_baz_firerate   
 radius      = global.a_l_o_baz_radius                            
 soldiercost = global.a_l_o_baz_soldiercost
@@ -81,11 +81,11 @@ if(global.a_placing == true) {
     x = mouse_x;
     y = mouse_y;
 }
-if(lives &lt;= 0) {
+if(levens &lt;= 0) {
     instance_destroy();
 }
 if (distance_to_point(target_x, target_y) &lt; 2) {
-    speed = false;
+    snelheid = 0;
 }
 </string>
           </argument>
@@ -142,7 +142,7 @@ if (distance_to_point(mouse_x, mouse_y) &lt; 3) &amp;&amp; (select) {
             <kind>1</kind>
             <string>///movement
 if (select) {
-    move_towards_point(mouse_x,mouse_y,global.a_l_o_baz_speed);
+    move_towards_point(mouse_x,mouse_y,snelheid);
     target_x = mouse_x;
     target_y = mouse_y;
 }

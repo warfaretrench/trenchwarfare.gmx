@@ -32,9 +32,9 @@ global.a_m_f_rhib_firerate       = global.a_m_f_firerate * global.a_m_f_firerate
 global.a_m_f_rhib_radius         = global.a_m_f_radius * global.a_m_f_radius_u
 global.a_m_f_rhib_soldiercost    = global.a_m_f_soldiercost * global.a_m_f_soldiercost_u
 
-lives       = global.a_m_f_rhib_lives             
+levens      = global.a_m_f_rhib_lives             
 damage      = global.a_m_f_rhib_damage     
-speed       = global.a_m_f_rhib_speed         
+snelheid    = global.a_m_f_rhib_speed         
 firerate    = global.a_m_f_rhib_firerate   
 radius      = global.a_m_f_rhib_radius                            
 soldiercost = global.a_m_f_rhib_soldiercost
@@ -64,7 +64,7 @@ target_y = self.y
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///step event
+            <string>///step events
 if (instance_exists(obj_A)) {
 if(global.a_placing == false){
     firerate -= 1;
@@ -83,14 +83,14 @@ if(global.a_placing == true) {
     x = mouse_x;
     y = mouse_y;
 }
-if(lives &lt;= 0) {
+if(levens &lt;= 0) {
     instance_destroy();
 }
 if (distance_to_point(target_x, target_y) &lt; 2) {
-    speed = false;
+    snelheid = false;
 }
 if (!position_meeting(obj_A_M_F_rhib.x, obj_A_M_F_rhib.y, obj_S_zee)){
-    speed = false;   
+    snelheid = false;   
 }
 }
 </string>
@@ -165,7 +165,7 @@ if (distance_to_point(mouse_x, mouse_y) &lt; 3) &amp;&amp; (select) {
             <string>///movement
     
 if (select) {
-    move_towards_point(mouse_x,mouse_y,global.a_m_f_rhib_speed);
+    move_towards_point(mouse_x,mouse_y,snelheid);
     target_x = mouse_x;
     target_y = mouse_y;
 }

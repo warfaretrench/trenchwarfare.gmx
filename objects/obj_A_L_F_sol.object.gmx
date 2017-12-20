@@ -32,9 +32,9 @@ global.a_l_f_sol_firerate       = global.a_l_f_firerate * global.a_l_f_firerate_
 global.a_l_f_sol_radius         = global.a_l_f_radius *global.a_l_f_radius_u
 global.a_l_f_sol_soldiercost    = global.a_l_f_soldiercost * global.a_l_f_soldiercost_u
 
-lives       = global.a_l_f_sol_lives             
+levens      = global.a_l_f_sol_lives             
 damage      = global.a_l_f_sol_damage     
-speed       = global.a_l_f_sol_speed         
+snelheid    = global.a_l_f_sol_speed;         
 firerate    = global.a_l_f_sol_firerate   
 radius      = global.a_l_f_sol_radius                            
 soldiercost = global.a_l_f_sol_soldiercost
@@ -65,6 +65,7 @@ target_y = self.y
           <argument>
             <kind>1</kind>
             <string>///step event
+
 if(global.a_placing == false){
     firerate -= 1;
     
@@ -81,12 +82,10 @@ if(global.a_placing == true) {
     x = mouse_x;
     y = mouse_y;
 }
-if(lives &lt;= 0) {
+if(levens &lt;= 0) {
     instance_destroy();
 }
-if (distance_to_point(target_x, target_y) &lt; 2) {
-    speed = false;
-}
+
 </string>
           </argument>
         </arguments>
@@ -141,12 +140,13 @@ if (distance_to_point(mouse_x, mouse_y) &lt; 3) &amp;&amp; (select) {
           <argument>
             <kind>1</kind>
             <string>///movement
-if (select) {
-    move_towards_point(mouse_x,mouse_y,speed);
-    target_x = mouse_x;
-    target_y = mouse_y;
+target_x = mouse_x;
+target_y = mouse_y;
+if (select) &amp;&amp; distance_to_point(target_x,target_y) &gt; 3
+{
+    move_towards_point(target_x, target_y, snelheid);
 }
-
+else { snelheid = 0 }
 </string>
           </argument>
         </arguments>
