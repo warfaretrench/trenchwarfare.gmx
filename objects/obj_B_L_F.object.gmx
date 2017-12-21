@@ -59,9 +59,9 @@ placing = false;
 if(placing == false){
     cooldown -= 1;
     
-    target = instance_nearest(x,y,obj_A_L_F);
+    target = (instance_nearest(x,y,obj_A) );
     
-    if(distance_to_object(obj_A_L_F) &lt; radius){
+    if(distance_to_object(target) &lt; radius){
         if(cooldown &lt;=0){
             instance_create(x,y,obj_ammo_bad_soldaat);
             cooldown = 25;

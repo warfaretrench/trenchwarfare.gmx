@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>100000000</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -181,12 +181,12 @@ global.a_soldiercost_u        = 1;
         global.a_l_s_radius     = (global.a_l_radius              * global.a_l_radius_u)
         global.a_l_s_soldiercost    = (global.a_l_soldiercost           * global.a_l_soldiercost_u)        
       
-        global.a_l_s_lives      = (global.a_l_lives               * global.a_l_lives_u)
-        global.a_l_s_damage     = (global.a_l_damage              * global.a_l_damage_u)
-        global.a_l_s_speed      = (global.a_l_speed               * global.a_l_speed_u)
-        global.a_l_s_firerate   = (global.a_l_firerate            * global.a_l_firerate_u)
-        global.a_l_s_radius     = (global.a_l_radius              * global.a_l_radius_u)
-        global.a_l_s_soldiercost  = (global.a_l_soldiercost             * global.a_l_soldiercost_u)  
+        global.a_l_o_lives      = (global.a_l_lives               * global.a_l_lives_u)
+        global.a_l_o_damage     = (global.a_l_damage              * global.a_l_damage_u)
+        global.a_l_o_speed      = (global.a_l_speed               * global.a_l_speed_u)
+        global.a_l_o_firerate   = (global.a_l_firerate            * global.a_l_firerate_u)
+        global.a_l_o_radius     = (global.a_l_radius              * global.a_l_radius_u)
+        global.a_l_o_soldiercost  = (global.a_l_soldiercost       * global.a_l_soldiercost_u)  
 
 //marine
     global.a_m_lives        = (global.a_lives                    * global.a_lives_u)     
@@ -194,28 +194,28 @@ global.a_soldiercost_u        = 1;
     global.a_m_speed        = (global.a_speed                    * global.a_speed_u)
     global.a_m_firerate     = (global.a_firerate                 * global.a_firerate_u)
     global.a_m_radius       = (global.a_radius                   * global.a_radius_u)          
-    global.a_m_soldiercost    = (global.a_soldiercost                 * global.a_soldiercost_u)
+    global.a_m_soldiercost    = (global.a_soldiercost            * global.a_soldiercost_u)
 
         global.a_m_f_lives      = (global.a_m_lives               * global.a_m_lives_u)
         global.a_m_f_damage     = (global.a_m_damage              * global.a_m_damage_u)
         global.a_m_f_speed      = (global.a_m_speed               * global.a_m_speed_u)
         global.a_m_f_firerate   = (global.a_m_firerate            * global.a_m_firerate_u)
         global.a_m_f_radius     = (global.a_m_radius              * global.a_m_radius_u)
-        global.a_m_f_soldiercost    = (global.a_m_soldiercost             * global.a_m_soldiercost_u)
+        global.a_m_f_soldiercost    = (global.a_m_soldiercost     * global.a_m_soldiercost_u)
 
         global.a_m_s_lives      = (global.a_l_lives               * global.a_m_lives_u)
         global.a_m_s_damage     = (global.a_l_damage              * global.a_m_damage_u)
         global.a_m_s_speed      = (global.a_l_speed               * global.a_m_speed_u)
         global.a_m_s_firerate   = (global.a_l_firerate            * global.a_m_firerate_u)
         global.a_m_s_radius     = (global.a_l_radius              * global.a_m_radius_u)
-        global.a_m_s_soldiercost   = (global.a_l_soldiercost            * global.a_m_soldiercost_u)        
+        global.a_m_s_soldiercost   = (global.a_l_soldiercost      * global.a_m_soldiercost_u)        
       
-        global.a_m_s_lives      = (global.a_m_lives               * global.a_m_lives_u)
-        global.a_m_s_damage     = (global.a_m_damage              * global.a_m_damage_u)
-        global.a_m_s_speed      = (global.a_m_speed               * global.a_m_speed_u)
-        global.a_m_s_firerate   = (global.a_m_firerate            * global.a_m_firerate_u)
-        global.a_m_s_radius     = (global.a_m_radius              * global.a_m_radius_u)
-        global.a_m_s_soldiercost    = (global.a_m_soldiercost          * global.a_m_soldiercost_u)  
+        global.a_m_o_lives      = (global.a_m_lives               * global.a_m_lives_u)
+        global.a_m_o_damage     = (global.a_m_damage              * global.a_m_damage_u)
+        global.a_m_o_speed      = (global.a_m_speed               * global.a_m_speed_u)
+        global.a_m_o_firerate   = (global.a_m_firerate            * global.a_m_firerate_u)
+        global.a_m_o_radius     = (global.a_m_radius              * global.a_m_radius_u)
+        global.a_m_o_soldiercost    = (global.a_m_soldiercost     * global.a_m_soldiercost_u)  
 
 //luchtmacht
     global.a_v_lives        = (global.a_lives                    * global.a_lives_u)     
@@ -239,12 +239,12 @@ global.a_soldiercost_u        = 1;
         global.a_v_s_radius     = (global.a_v_radius              * global.a_v_radius_u)
         global.a_v_s_soldiercost    = (global.a_v_soldiercost            * global.a_v_soldiercost_u)        
       
-        global.a_v_s_lives      = (global.a_v_lives               * global.a_v_lives_u)
-        global.a_v_s_damage     = (global.a_v_damage              * global.a_v_damage_u)
-        global.a_v_s_speed      = (global.a_v_speed               * global.a_v_speed_u)
-        global.a_v_s_firerate   = (global.a_v_firerate            * global.a_v_firerate_u)
-        global.a_v_s_radius     = (global.a_v_radius              * global.a_v_radius_u)
-        global.a_v_s_soldiercost   = (global.a_v_soldiercost            * global.a_v_soldiercost_u)  
+        global.a_v_o_lives      = (global.a_v_lives               * global.a_v_lives_u)
+        global.a_v_o_damage     = (global.a_v_damage              * global.a_v_damage_u)
+        global.a_v_o_speed      = (global.a_v_speed               * global.a_v_speed_u)
+        global.a_v_o_firerate   = (global.a_v_firerate            * global.a_v_firerate_u)
+        global.a_v_o_radius     = (global.a_v_radius              * global.a_v_radius_u)
+        global.a_v_o_soldiercost   = (global.a_v_soldiercost            * global.a_v_soldiercost_u)  
  
 //raket
     global.a_r_lives        = (global.a_lives                    * global.a_lives_u)     
@@ -268,12 +268,12 @@ global.a_soldiercost_u        = 1;
         global.a_r_s_radius     = (global.a_r_radius              * global.a_r_radius_u)
         global.a_r_s_soldiercost   = (global.a_r_soldiercost             * global.a_r_soldiercost_u)        
       
-        global.a_r_s_lives      = (global.a_r_lives               * global.a_r_lives_u)
-        global.a_r_s_damage     = (global.a_r_damage              * global.a_r_damage_u)
-        global.a_r_s_speed      = (global.a_r_speed               * global.a_r_speed_u)
-        global.a_r_s_firerate   = (global.a_r_firerate            * global.a_r_firerate_u)
-        global.a_r_s_radius     = (global.a_r_radius              * global.a_r_radius_u)
-        global.a_r_s_soldiercost    = (global.a_r_soldiercost            * global.a_r_soldiercost_u)  
+        global.a_r_o_lives      = (global.a_r_lives               * global.a_r_lives_u)
+        global.a_r_o_damage     = (global.a_r_damage              * global.a_r_damage_u)
+        global.a_r_o_speed      = (global.a_r_speed               * global.a_r_speed_u)
+        global.a_r_o_firerate   = (global.a_r_firerate            * global.a_r_firerate_u)
+        global.a_r_o_radius     = (global.a_r_radius              * global.a_r_radius_u)
+        global.a_r_o_soldiercost    = (global.a_r_soldiercost            * global.a_r_soldiercost_u)  
 
 
 
