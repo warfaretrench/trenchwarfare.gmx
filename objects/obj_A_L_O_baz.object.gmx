@@ -25,15 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-global.a_l_o_baz_lives          = global.a_l_o_lives * global.a_l_o_lives_u
-global.a_l_o_baz_damage         = global.a_l_o_damage * global.a_l_o_damage_u
-global.a_l_o_baz_speed          = global.a_l_o_speed * global.a_l_o_speed_u
-global.a_l_o_baz_firerate       = global.a_l_o_firerate * global.a_l_o_firerate_u
-global.a_l_o_baz_radius         = global.a_l_o_radius * global.a_l_o_radius_u
-global.a_l_o_baz_soldiercost    = global.a_l_o_soldiercost * global.a_l_o_soldiercost_u
-
-levens      = global.a_l_o_baz_lives             
+            <string>levens      = global.a_l_o_baz_lives             
 damage      = global.a_l_o_baz_damage     
 snelheid    = global.a_l_o_baz_speed         
 firerate    = global.a_l_o_baz_firerate   
@@ -70,7 +62,7 @@ image_angle = direction;
 if(global.a_placing == false){
     firerate -= 1;
     
-    target = instance_nearest(x,y,obj_B);
+    target = instance_nearest(x,y,obj_B_L_S) 
     
     if(distance_to_object(target) &lt; radius){
         if(firerate &lt;=0){

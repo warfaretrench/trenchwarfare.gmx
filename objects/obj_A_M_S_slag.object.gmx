@@ -25,15 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-global.a_m_s_slag_lives          = global.a_m_s_lives * global.a_m_s_lives_u
-global.a_m_s_slag_damage         = global.a_m_s_damage * global.a_m_s_damage_u
-global.a_m_s_slag_speed          = global.a_m_s_speed * global.a_m_s_speed_u
-global.a_m_s_slag_firerate       = global.a_m_s_firerate * global.a_m_s_firerate_u
-global.a_m_s_slag_radius         = global.a_m_s_radius * global.a_m_s_radius_u
-global.a_m_s_slag_soldiercost    = global.a_m_s_soldiercost * global.a_m_s_soldiercost_u
-
-levens      = global.a_m_s_slag_lives             
+            <string>levens      = global.a_m_s_slag_lives             
 damage      = global.a_m_s_slag_damage     
 snelheid    = global.a_m_s_slag_speed         
 firerate    = global.a_m_s_slag_firerate   
@@ -71,11 +63,19 @@ if (instance_exists(obj_A)) {
 if(global.a_placing == false){
     firerate -= 1;
     
-    target = instance_nearest(x,y,obj_B_M);
+    target = instance_nearest(x,y,obj_B);
     
     if(distance_to_object(target) &lt; radius){
         if(firerate &lt;=0){
             instance_create(x,y,obj_A_M_S_ammo);
+            firerate = 25;
+        }
+    }
+        airtarget = instance_nearest(x,y,obj_B_V);
+    
+    if(distance_to_object(airtarget) &lt; radius){
+        if(firerate &lt;=0){
+            instance_create(x,y,obj_A_M_S_ammo_air);
             firerate = 25;
         }
     }

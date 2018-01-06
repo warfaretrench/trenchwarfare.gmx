@@ -25,13 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.a_l_s_tank_lives          = global.a_l_s_lives * global.a_l_s_lives_u
-global.a_l_s_tank_damage         = global.a_l_s_damage * global.a_l_s_damage_u
-global.a_l_s_tank_speed          = global.a_l_s_speed * global.a_l_s_speed_u
-global.a_l_s_tank_firerate       = global.a_l_s_firerate * global.a_l_s_firerate_u
-global.a_l_s_tank_radius         = global.a_l_s_radius * global.a_l_s_radius_u
-global.a_l_s_tank_soldiercost    = global.a_l_s_soldiercost * global.a_l_s_soldiercost
-levens      = global.a_l_s_tank_lives             
+            <string>levens      = global.a_l_s_tank_lives             
 damage      = global.a_l_s_tank_damage     
 snelheid    = global.a_l_s_tank_speed         
 firerate    = global.a_l_s_tank_firerate   
@@ -67,9 +61,9 @@ image_angle = direction;
 if(global.a_placing == false){
     firerate -= 1;
     
-    target = instance_nearest(x,y,obj_B);
+    target = instance_nearest(x,y,obj_B_L);
     
-    if(distance_to_object(obj_B)&lt; radius){
+    if(distance_to_object(target)&lt; radius){
         if(firerate &lt;=0){
             instance_create(x,y,obj_A_L_S_ammo);
             firerate = 25;

@@ -25,15 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-global.a_m_f_rhib_lives          = global.a_m_f_lives * global.a_m_f_lives_u
-global.a_m_f_rhib_damage         = global.a_m_f_damage * global.a_m_f_damage_u
-global.a_m_f_rhib_speed          = global.a_m_f_speed * global.a_m_f_speed_u
-global.a_m_f_rhib_firerate       = global.a_m_f_firerate * global.a_m_f_firerate_u
-global.a_m_f_rhib_radius         = global.a_m_f_radius * global.a_m_f_radius_u
-global.a_m_f_rhib_soldiercost    = global.a_m_f_soldiercost * global.a_m_f_soldiercost_u
-
-levens      = global.a_m_f_rhib_lives             
+            <string>levens      = global.a_m_f_rhib_lives             
 damage      = global.a_m_f_rhib_damage     
 snelheid    = global.a_m_f_rhib_speed         
 firerate    = global.a_m_f_rhib_firerate   
@@ -71,7 +63,7 @@ if (instance_exists(obj_A)) {
 if(global.a_placing == false){
     firerate -= 1;
     
-    target = instance_nearest(x,y,obj_B_M);
+    target = instance_nearest(x,y,obj_B_M_F) //|| instance_nearest(x,y,obj_B_L_F);
     
     if(distance_to_object(target) &lt; radius){
         if(firerate &lt;=0){
