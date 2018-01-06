@@ -6,10 +6,10 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>3</bbox_left>
-  <bbox_right>26</bbox_right>
-  <bbox_top>3</bbox_top>
-  <bbox_bottom>26</bbox_bottom>
+  <bbox_left>0</bbox_left>
+  <bbox_right>31</bbox_right>
+  <bbox_top>0</bbox_top>
+  <bbox_bottom>30</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -19,6 +19,11 @@
   <width>32</width>
   <height>32</height>
   <frames>
-    <frame index="0">images\spr_us_sniper_0.png</frame>
+    <frame index="0">images\spr_expl_0.png</frame>
+    <frame index="1">images\spr_expl_1.png</frame>
+    <frame index="2">images\spr_expl_2.png</frame>
+    <frame index="3">images\spr_expl_3.png</frame>
+    <frame index="4">images\spr_expl_4.png</frame>
+    <frame index="5">images\spr_expl_5.png</frame>
   </frames>
 </sprite>
